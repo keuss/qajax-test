@@ -1,12 +1,15 @@
-# react-sandbox
+# formationMaroc-FrontPromises
 Simple Qajax test with React with :
 [https://github.com/gre/qajax](https://github.com/gre/qajax "https://github.com/gre/qajax")
 
 Test JSON with : http://httpbin.org/
 
-Get JSON from [http://httpbin.org/ip](http://httpbin.org/ip "http://httpbin.org/ip")
-and from (with delay 3s) [http://httpbin.org/delay/3](http://httpbin.org/delay/3 "http://httpbin.org/delay/3")
+# TODO
+- Add other json data and display it in the react component with JSON exemple from [http://httpbin.org/delay/3](http://httpbin.org/delay/3 "http://httpbin.org/delay/3"). Don't forget to update the api.js !
+- See the asynchronous log ...
+- HTML Result is
 
+![alt tag](./Capture.PNG)
 
 # react version
 ```
@@ -56,6 +59,3 @@ JS :
 npm run watch-js
 ```
 
-HTML
-
-![alt tag](./Capture.PNG)

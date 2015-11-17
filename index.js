@@ -1,27 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Q from 'q';
-import { getData, getIp } from './api'
+import { getIp } from './api'
 
 export default class TestQAJAX extends React.Component {
   render() {
     console.log('render', new Date());
     return (
       <div>
-        { this.props.ip && this.props.otherData ?
-          this.renderAllData(this.props.ip, this.props.otherData) :
+        { this.props.ip ?
+          this.renderAllData(this.props.ip) :
           <span>ERREUR !!!</span>
         }
       </div>
     );
   }
 
-  renderAllData(ip, data) {
-    console.log('data', JSON.stringify(data));
+  renderAllData(ip) {
     return (
       <ul>
         <li>IP : {ip.origin}</li>
-        <li>Headers Host : {data.headers.Host}</li>
       </ul>
     );
   }
@@ -29,11 +27,8 @@ export default class TestQAJAX extends React.Component {
 }
 
 // TEST JSON
-Q.all([
-  getIp(),
-  getData()
-]).spread( (ip, data) => {
-  ReactDOM.render(<TestQAJAX ip={ip} otherData={data} />, document.getElementById('container'));
+getIp().then( ip => {
+  ReactDOM.render(<TestQAJAX ip={ip} />, document.getElementById('container'));
 }).catch(err => {
   console.log('err', err);
   ReactDOM.render(<TestQAJAX />, document.getElementById('container'));
