@@ -4,6 +4,7 @@ import { testJSON } from './api'
 
 export default class TestQAJAX extends React.Component {
   render() {
+    console.log('render', new Date());
     return (
       <div>
         { this.props.param ?
@@ -32,3 +33,5 @@ testJSON().then(json => {
   console.log('err', err);
   ReactDOM.render(<TestQAJAX />, document.getElementById('container'));
 });
+
+console.log('Other stuff ...', new Date());
