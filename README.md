@@ -5,9 +5,10 @@ Simple Qajax test with React with :
 Test JSON with : http://httpbin.org/
 
 # TODO
+- Use Q lib : [https://github.com/kriskowal/q](https://github.com/kriskowal/q "https://github.com/kriskowal/q")
 - Add other json data and display it in the react component with JSON exemple from [http://httpbin.org/delay/3](http://httpbin.org/delay/3 "http://httpbin.org/delay/3"). Don't forget to update the api.js !
-- See the asynchronous log ...
-- HTML Result is
+- See the asynchronous logs ...
+- HTML Result must be :
 
 ![alt tag](./Capture.PNG)
 
