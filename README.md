@@ -1,4 +1,4 @@
-# react-sandbox
+# qajax-test
 Simple Qajax test with React with :
 [https://github.com/gre/qajax](https://github.com/gre/qajax "https://github.com/gre/qajax")
 
