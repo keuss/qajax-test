@@ -2,9 +2,12 @@
 Simple Qajax test with React with :
 [https://github.com/gre/qajax](https://github.com/gre/qajax "https://github.com/gre/qajax")
 
-Get JSON from [http://www.jsontest.com/](http://www.jsontest.com/ "http://www.jsontest.com/")
+Test JSON with : http://httpbin.org/
 
-Exemple : [http://date.jsontest.com/](http://date.jsontest.com/ "http://date.jsontest.com/")
+Get JSON from [http://httpbin.org/ip](http://httpbin.org/ip "http://httpbin.org/ip")
+and from (with delay 3s) [http://httpbin.org/delay/3](http://httpbin.org/delay/3 "http://httpbin.org/delay/3")
+
+
 # react version
 ```
 0.14.0
@@ -56,7 +59,3 @@ npm run watch-js
 HTML
 
 ![alt tag](./Capture.PNG)
-
-![alt tag](./Capture2.PNG)
-
-

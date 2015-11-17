@@ -1,5 +1,9 @@
 import qajax from 'qajax';
 
-export function testJSON() {
-  return qajax.getJSON('http://date.jsontest.com/');
+export function getIp() {
+  return qajax.getJSON('http://httpbin.org/ip');
+}
+
+export function getData() {
+  return qajax.getJSON('http://httpbin.org/delay/3');
 }

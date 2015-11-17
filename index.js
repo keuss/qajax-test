@@ -1,25 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { testJSON } from './api'
+import Q from 'q';
+import { getData, getIp } from './api'
 
 export default class TestQAJAX extends React.Component {
   render() {
     console.log('render', new Date());
     return (
       <div>
-        { this.props.param ?
-          this.renderTime(this.props.param.time, this.props.param.date) :
+        { this.props.ip && this.props.otherData ?
+          this.renderAllData(this.props.ip, this.props.otherData) :
           <span>ERREUR !!!</span>
         }
       </div>
     );
   }
 
-  renderTime(time, date) {
+  renderAllData(ip, data) {
+    console.log('data', JSON.stringify(data));
     return (
       <ul>
-        <li>Time : { time }</li>
-        <li>Date : { date }</li>
+        <li>IP : {ip.origin}</li>
+        <li>Headers Host : {data.headers.Host}</li>
       </ul>
     );
   }
@@ -27,8 +29,11 @@ export default class TestQAJAX extends React.Component {
 }
 
 // TEST JSON
-testJSON().then(json => {
-  ReactDOM.render(<TestQAJAX param={json} />, document.getElementById('container'));
+Q.all([
+  getIp(),
+  getData()
+]).spread( (ip, data) => {
+  ReactDOM.render(<TestQAJAX ip={ip} otherData={data} />, document.getElementById('container'));
 }).catch(err => {
   console.log('err', err);
   ReactDOM.render(<TestQAJAX />, document.getElementById('container'));
